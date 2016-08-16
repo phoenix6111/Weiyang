@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ColorIconWithText-->
+    <declare-styleable name="ColorIconWithText">
+        <attr name="normal_icon" format="reference"/><!---->
+        <attr name="focused_icon" format="reference"/>
+        <attr name="normal_text_color" format="color"/>
+        <attr name="focused_text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+</resources>

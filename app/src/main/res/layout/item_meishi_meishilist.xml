@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:clickable="true"
+    card_view:cardCornerRadius="0dp"
+    android:background="@drawable/rv_selector"
+    card_view:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+                android:id="@+id/mdv_meishi_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:background="@color/primary_content_bg"
+                fresco:actualImageScaleType="focusCrop"/>
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/common_item_em_style"
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/main_padding"
+                android:layout_marginBottom="@dimen/main_padding"
+                android:ellipsize="end"
+                tools:text="小亚"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_meishi_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/main_padding"
+            tools:text="粉蒸排骨"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:textColor="@color/primary_font_color" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+

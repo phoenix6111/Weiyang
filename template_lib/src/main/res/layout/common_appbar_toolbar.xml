@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appbar"
+    android:layout_height="@dimen/actionbar_height"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    app:elevation="0dp"
+    android:theme="@style/AppTheme.AppBarOverlay">
+
+    <include layout="@layout/common_toolbar_primary"/>
+
+</android.support.design.widget.AppBarLayout>

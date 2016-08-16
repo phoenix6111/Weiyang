@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#21292B</color>
+    <!--<color name="colorPrimary">#393A3E</color>-->
+    <color name="colorPrimaryDark">#393A3E</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorInverse">#45C01A</color>
+
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="primary_black">#000000</color>
+    <color name="primary_font_color">#ff333333</color>
+    <color name="second_font_color">#ff666666</color>
+    <color name="mainTabTextColor">#dddddd</color>
+
+    <color name="primary_content_bg">#eeeeee</color>
+    <color name="primary_grey">#eeeeee</color>
+    <color name="gray_light_p50">#26aaaaaa</color>
+    <color name="gray_light">#f2efef</color>
+    <color name="gray_normal">#B6B6B6</color>
+    <color name="gray_middle">#666666</color>
+    <color name="gray_dark">#333333</color>
+
+    <!--swiptoloadlayout-->
+    <color name="google_blue">#4285F4</color>
+    <color name="google_red">#EA4335</color>
+    <color name="google_green">#34A853</color>
+    <color name="google_yellow">#FBBC05</color>
+
+    <color name="selector_color">#4D969696</color>
+    <color name="toolbar_divider_color">#4D969696</color>
+
+</resources>

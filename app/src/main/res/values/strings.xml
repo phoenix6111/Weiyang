@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Weiyang</string>
+
+    <string name="tab_index">首页</string>
+    <string name="tab_wenzhang">文章</string>
+    <string name="tab_ditu">地图</string>
+    <string name="tab_my">我的</string>
+
+    <string name="tabbar_title_ditu">美食地图</string>
+
+    <string name="search">搜索</string>
+    <string name="collect">收藏</string>
+    <string name="share">分享</string>
+    <string name="act_search_history_text">最近搜索记录</string>
+    <string name="act_search_history_clear">清空搜索记录</string>
+    <string name="notify_exit_confirm">再按一次退出</string>
+
+    <string name="mefragment_profile_notlogin">未登录</string>
+    <string name="mefragment_profile_btn_logintext">登录/注册</string>
+    <string name="act_profile_btn_updatepaddwd">修改密码</string>
+    <string name="act_profile_tv_touxian">头像</string>
+    <string name="act_profile_toolbar_title">个人信息</string>
+    <string name="act_auth_passwd_hint">请输入密码</string>
+    <string name="act_auth_captcha_hint">获取验证码</string>
+    <string name="act_auth_btn_validate_text">验证</string>
+    <string name="act_auth_btn_captcha_text">请输入验证码</string>
+    <string name="act_auth_tel_hint">手机号</string>
+    <string name="act_auth_security_code">请输入验证码</string>
+    <string name="common_btn_reg_text">注册</string>
+    <string name="common_btn_submit">提交</string>
+    <string name="common_btn_login_text">登陆</string>
+    <string name="act_profile_dialog_nickname_title">编辑昵称</string>
+    <string name="act_profile_dialog_gender_title">选择性别</string>
+    <string name="common_dialog_positive_text">完成</string>
+    <string name="common_dialog_negtive_text">取消</string>
+
+    <string name="collection">收藏</string>
+    <string name="feedback">反馈</string>
+    <string name="setup">设置</string>
+    <string name="about">关于</string>
+
+    <string name="common_api_permission_err_msg">权限错误，需登陆才能进一步操作，将跳转到登陆界面</string>
+    <string name="common_api_network_err_msg">网络连接错误</string>
+    <string name="error_msg_parse">数据解析错误</string>
+    <string name="common_api_unknown_err_msg">发生错误</string>
+    <string name="common_vendor_permission_err_msg">权限错误</string>
+
+    <string name="common_no_network">当前没有可用的网络连接</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+</resources>

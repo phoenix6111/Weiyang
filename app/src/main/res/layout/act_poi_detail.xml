@@ -1,0 +1,541 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+                android:id="@+id/mdv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/primary_content_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/primary_content_bg">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/common_item_title_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        tools:text="紫金饭店" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/second_padding"
+                        android:layout_marginBottom="@dimen/second_padding">
+                        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                            android:id="@+id/srb_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srb_starSize="15dp"
+                            app:srb_numberOfStars="5"
+                            app:srb_stepSize="0.5"
+                            app:srb_starBorderWidth="4"
+                            app:srb_borderColor="#4dbf26"
+                            app:srb_fillColor="#45C01A"
+                            />
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/srb_score"
+                            android:layout_toEndOf="@id/srb_score"
+                            android:layout_marginLeft="@dimen/second_padding"
+                            android:layout_marginStart="@dimen/second_padding"
+                            tools:text="人均：￥53"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_classify"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/emTextColor"
+                            android:textSize="15sp"
+                            tools:text="火锅" />
+
+                        <TextView
+                            android:id="@+id/tv_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/main_padding"
+                            android:layout_marginStart="@dimen/main_padding"
+                            android:layout_toEndOf="@id/tv_classify"
+                            android:layout_toRightOf="@id/tv_classify"
+                            android:textColor="@color/emTextColor"
+                            android:textSize="15sp"
+                            tools:text="241米" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                android:clickable="true"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/iv_nearby"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/tips_nearby2" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/main_padding"
+                            android:layout_marginStart="@dimen/main_padding"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/iv_nearby"
+                            android:layout_toRightOf="@id/iv_nearby"
+                            android:textColor="@color/primary_font_color"
+                            android:textSize="15sp"
+                            tools:text="深圳市龙岗区坪山新区坪葵路285号" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+                        <ImageView
+                            android:id="@+id/iv_tel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/tips_tel2" />
+
+                        <TextView
+                            android:id="@+id/tv_tel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/main_padding"
+                            android:layout_marginStart="@dimen/main_padding"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/iv_tel"
+                            android:layout_toRightOf="@id/iv_tel"
+                            android:textColor="@color/primary_font_color"
+                            android:textSize="15sp"
+                            tools:text="0755-28312699" />
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+                        <ImageView
+                            android:id="@+id/iv_business_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/tips_time2" />
+
+                        <TextView
+                            android:id="@+id/tv_business_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/main_padding"
+                            android:layout_marginStart="@dimen/main_padding"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/iv_business_hours"
+                            android:layout_toRightOf="@id/iv_business_hours"
+                            android:textColor="@color/primary_font_color"
+                            android:textSize="15sp"
+                            tools:text="营业时间 10:00-22:00" />
+                    </RelativeLayout>-->
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_command_food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                android:clickable="true"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/common_item_title_style"
+                        android:layout_marginBottom="@dimen/main_padding"
+                        android:text="推荐菜"/>
+                    <include layout="@layout/common_card_divider"/>
+                    <TextView
+                        android:id="@+id/tv_recommend_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/common_item_em_style"
+                        android:layout_marginTop="@dimen/main_padding"
+                        android:textSize="14sp"
+                        tools:text="窑鸡 水库大头鱼 自磨豆腐 香酥肉 三杯鸭"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                android:clickable="true"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/main_padding">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_title_style"
+                            android:layout_centerVertical="true"
+                            android:text="详情"/>
+                        <ImageView
+                            style="@style/common_mefragment_card_righticon" />
+                    </RelativeLayout>
+                    <include layout="@layout/common_card_divider"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/common_item_title_style"
+                        android:layout_marginTop="@dimen/main_padding"
+                        android:layout_marginBottom="@dimen/second_padding"
+                        android:textSize="15sp"
+                        android:text="商户介绍、商户详情等"/>
+                    <TextView
+                        android:id="@+id/tv_business_hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#b7b3b3"
+                        tools:text="营业时间：09:00分-22:30分"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                android:clickable="true"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_title_style"
+                            android:layout_centerVertical="true"
+                            android:text="用户评论"/>
+                        <ImageView
+                            style="@style/common_mefragment_card_righticon" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/main_padding">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/main_padding"
+                            android:layout_marginBottom="@dimen/main_padding">
+                            <TextView
+                                android:id="@+id/tv_comment_author1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/common_item_em_style"
+                                android:layout_centerVertical="true"
+                                android:textSize="15sp"
+                                tools:text="28124640"/>
+                            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                                android:id="@+id/srb_comment1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tv_comment_author1"
+                                android:layout_toEndOf="@id/tv_comment_author1"
+                                android:layout_marginLeft="@dimen/main_padding"
+                                android:layout_marginStart="@dimen/main_padding"
+                                android:layout_centerVertical="true"
+                                app:srb_starSize="15dp"
+                                app:srb_numberOfStars="5"
+                                app:srb_stepSize="0.5"
+                                app:srb_starBorderWidth="4"
+                                app:srb_borderColor="#4dbf26"
+                                app:srb_fillColor="#45C01A" />
+                        </RelativeLayout>
+                        <TextView
+                            android:id="@+id/tv_comment_content1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_title_style"
+                            android:layout_marginBottom="@dimen/main_padding"
+                            android:textSize="16sp"
+                            tools:text="豆腐很好吃，饮品就一般了，老板态度很好，"/>
+                        <TextView
+                            android:id="@+id/tv_comment_date1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_em_style"
+                            android:textSize="15sp"
+                            tools:text="2016-05-07"/>
+                    </LinearLayout>
+
+                    <include layout="@layout/common_card_divider"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/main_padding">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/main_padding"
+                            android:layout_marginBottom="@dimen/main_padding">
+                            <TextView
+                                android:id="@+id/tv_comment_author2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/common_item_em_style"
+                                android:layout_centerVertical="true"
+                                android:textSize="15sp"
+                                tools:text="28124640"/>
+                            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                                android:id="@+id/srb_comment2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tv_comment_author2"
+                                android:layout_toEndOf="@id/tv_comment_author2"
+                                android:layout_marginLeft="@dimen/main_padding"
+                                android:layout_marginStart="@dimen/main_padding"
+                                android:layout_centerVertical="true"
+                                app:srb_starSize="15dp"
+                                app:srb_numberOfStars="5"
+                                app:srb_stepSize="0.5"
+                                app:srb_starBorderWidth="4"
+                                app:srb_borderColor="#4dbf26"
+                                app:srb_fillColor="#45C01A" />
+                        </RelativeLayout>
+                        <TextView
+                            android:id="@+id/tv_comment_content2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_title_style"
+                            android:layout_marginBottom="@dimen/main_padding"
+                            android:textSize="16sp"
+                            tools:text="豆腐很好吃，饮品就一般了，老板态度很好，"/>
+                        <TextView
+                            android:id="@+id/tv_comment_date2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/common_item_em_style"
+                            android:textSize="15sp"
+                            tools:text="2016-05-07"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_nav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rv_selector"
+                android:clickable="true"
+                card_view:cardCornerRadius="0dp"
+                card_view:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/main_padding">
+                        <ImageView
+                            android:id="@+id/iv_people_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nav_walk_normal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/iv_people_tips"
+                            android:layout_marginLeft="@dimen/main_padding"
+                            android:layout_centerVertical="true"
+                            style="@style/common_item_title_style"
+                            android:textSize="16sp"
+                            android:text="当前位置 到 该餐厅"/>
+                        <ImageView
+                            style="@style/common_mefragment_card_righticon" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tv_go_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/primary_black"
+                                android:textSize="25sp"
+                                tools:text="19"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tv_go_time"
+                                android:layout_toEndOf="@id/tv_go_time"
+                                style="@style/common_item_title_style"
+                                android:layout_alignParentBottom="true"
+                                android:textSize="16sp"
+                                android:text="分钟"/>
+                        </RelativeLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:background="@color/gray_light_p50"/>
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tv_nav_distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/primary_black"
+                                android:textSize="25sp"
+                                tools:text="1.4"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tv_nav_distance"
+                                android:layout_toEndOf="@id/tv_nav_distance"
+                                style="@style/common_item_title_style"
+                                android:layout_alignParentBottom="true"
+                                android:textSize="16sp"
+                                android:text="米"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

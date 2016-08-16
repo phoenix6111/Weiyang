@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rv_selector"
+    android:paddingTop="@dimen/main_padding"
+    android:paddingBottom="@dimen/main_padding"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_item_img_height"
+            android:layout_weight="1">
+            <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+                android:id="@+id/mdv_img"
+                style="@style/common_item_img_style"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/main_padding"
+                android:layout_marginEnd="@dimen/main_padding"
+                fresco:actualImageScaleType="focusCrop"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/common_item_img_height"
+            android:layout_weight="2">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/common_item_title_style"
+                android:lines="2"
+                android:ellipsize="end"
+                tools:text="网络图片加载的封装-（从零开始搭建android框架系列（4））"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/common_item_em_style"
+                    android:layout_centerVertical="true"
+                    tools:text="小亚"/>
+                <TextView
+                    android:id="@+id/tv_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_delete"
+                    style="@style/common_item_em_style"
+                    android:layout_centerVertical="true"
+                    tools:text="2010-08-15"/>
+                <include layout="@layout/common_item_icon_delete"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

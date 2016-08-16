@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_container"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/primary_content_bg">
+    <View
+        android:id="@+id/sidebar_indicator"
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorInverse"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_primary_cate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16dp"
+        android:textColor="@color/primary_font_color"/>
+</RelativeLayout>

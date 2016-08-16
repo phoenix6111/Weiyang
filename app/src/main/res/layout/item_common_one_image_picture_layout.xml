@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/main_padding"
+    android:paddingBottom="@dimen/main_padding"
+    android:orientation="vertical"
+    android:background="@drawable/rv_selector">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/common_item_title_style"
+        android:layout_marginBottom="5dp"
+        tools:text="只用短短的5分钟就让你感受到海贼王的精神" />
+    <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+        android:id="@+id/mdv_img"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:background="@color/primary_content_bg"
+        fresco:actualImageScaleType="focusCrop" />
+
+    <RelativeLayout
+        android:id="@+id/rl_tag_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/tv_tag"
+            style="@style/common_item_em_style"
+            tools:text="吴亚玲"/>
+        <TextView
+            android:id="@+id/tv_img_count"
+            style="@style/common_item_em_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            tools:text="2016-08-01 08:04:57"/>
+    </RelativeLayout>
+
+</LinearLayout>

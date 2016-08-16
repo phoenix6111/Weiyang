@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="profile_touxian_dialog_list">
+        <item>拍照</item>
+        <item>从相册选择</item>
+    </string-array>
+    <string-array name="profile_gender_dialog_list">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+</resources>

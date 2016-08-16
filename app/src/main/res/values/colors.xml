@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EA4335</color>
+    <color name="colorPrimaryDark">#e41605</color>
+    <color name="colorAccent">#34A853</color>
+
+    <color name="bottomTabBg">#FFF8F8F8</color>
+    <color name="common_dreeview_bg">@color/primary_grey</color>
+    <color name="bottomTabNormalColor">#777777</color>
+    <color name="bottomTabBgLineColor">#ffe5e5e5</color>
+
+    <color name="common_divider_color">#eeeeee</color>
+    <color name="common_divider_color2">#dddddd</color>
+    <color name="common_divider_color3">#cccccc</color>
+
+    <color name="emTextColor">#B6B6B6</color>
+    <color name="colorTextLight">#ADADAD</color>
+    <color name="mefragment_card_title_color">#222222</color>
+</resources>

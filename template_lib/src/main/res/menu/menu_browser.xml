@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/browser">
+        <item
+            android:id="@+id/refresh"
+            android:icon="@drawable/tabbar_refresh"
+            android:title="@string/refresh"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/copy"
+            android:title="@string/copy_url"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/to_browser"
+            android:title="@string/startwith_browser"
+            app:showAsAction="never" />
+    </group>
+</menu>

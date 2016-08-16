@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_content_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/main_padding">
+
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:padding="@dimen/second_padding">
+
+                <ImageView
+                    android:id="@+id/iv_tel_icon"
+                    android:layout_width="@dimen/auth_login_icon_size"
+                    android:layout_height="@dimen/auth_login_icon_size"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/auth_tel" />
+
+                <EditText
+                    android:id="@+id/et_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/auth_cardview_ev_height"
+                    android:digits="1234567890."
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/auth_cardview_ev_iv_margin"
+                    android:layout_marginStart="@dimen/auth_cardview_ev_iv_margin"
+                    android:layout_toEndOf="@id/iv_tel_icon"
+                    android:layout_toRightOf="@id/iv_tel_icon"
+                    android:background="@null"
+                    android:hint="@string/act_auth_tel_hint"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_light" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:padding="@dimen/auth_cardview_ev_padding">
+
+                <ImageView
+                    android:id="@+id/iv_passwd_icon"
+                    android:layout_width="@dimen/auth_login_icon_size"
+                    android:layout_height="@dimen/auth_login_icon_size"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/auth_passwd" />
+
+                <EditText
+                    android:id="@+id/et_passswd"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/main_padding"
+                    android:layout_marginStart="@dimen/main_padding"
+                    android:layout_toEndOf="@id/iv_passwd_icon"
+                    android:layout_toRightOf="@id/iv_passwd_icon"
+                    android:background="@null"
+                    android:hint="@string/act_auth_passwd_hint"
+                    android:inputType="textPassword"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="17sp"
+        android:text="@string/common_btn_login_text" />
+
+    <TextView
+        android:id="@+id/tv_forget_passwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:text="@string/auth_login_forget_passwd"
+        android:textColor="@color/second_font_color" />
+
+
+</LinearLayout>

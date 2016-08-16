@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_delete"
+    android:layout_width="14dp"
+    android:layout_height="14dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="5dp"
+    android:src="@drawable/interest_add_listclose_icon" />

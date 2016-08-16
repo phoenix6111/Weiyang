@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.wanghaisheng.weiyang.ui.common.NoScrollViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
+    </com.wanghaisheng.weiyang.ui.common.NoScrollViewPager>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@drawable/main_bottom_tab_bg">
+        <com.wanghaisheng.template_lib.widget.ColorIconWithText
+            android:id="@+id/tab_index"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:normal_icon="@drawable/tab_home_icon"
+            app:focused_icon="@drawable/tab_home_icon_press"
+            app:normal_text_color="@color/bottomTabNormalColor"
+            app:focused_text_color="@color/colorPrimary"
+            app:text_size="11sp"
+            app:text="@string/tab_index" />
+
+        <com.wanghaisheng.template_lib.widget.ColorIconWithText
+            android:id="@+id/tab_xingqu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:normal_icon="@drawable/tab_xingqu_icon"
+            app:focused_icon="@drawable/tab_xingqu_icon_pressed"
+            app:normal_text_color="@color/bottomTabNormalColor"
+            app:focused_text_color="@color/colorPrimary"
+            app:text="@string/tab_wenzhang"
+            app:text_size="11sp"/>
+
+        <com.wanghaisheng.template_lib.widget.ColorIconWithText
+            android:id="@+id/tab_zhuanti"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:normal_icon="@drawable/tab_zhuanti_icon_normal"
+            app:focused_icon="@drawable/tab_zhuanti_icon_focused"
+            app:normal_text_color="@color/bottomTabNormalColor"
+            app:focused_text_color="@color/colorPrimary"
+            app:text="@string/tab_ditu"
+            app:text_size="11sp"/>
+
+        <com.wanghaisheng.template_lib.widget.ColorIconWithText
+            android:id="@+id/tab_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="2dp"
+            app:normal_icon="@drawable/tab_me_icon"
+            app:focused_icon="@drawable/tab_me_icon_pressed"
+            app:normal_text_color="@color/bottomTabNormalColor"
+            app:focused_text_color="@color/colorPrimary"
+            app:text="@string/tab_my"
+            app:text_size="11sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

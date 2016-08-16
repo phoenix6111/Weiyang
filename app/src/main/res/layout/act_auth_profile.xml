@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/primary_content_bg">
+
+    <include layout="@layout/common_appbar_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_touxian"
+            style="@style/common_card_profile"
+            android:layout_marginTop="@dimen/me_card_top_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/common_card_profile_label"
+                    android:text="@string/act_profile_tv_touxian" />
+
+                <ImageView
+                    android:id="@+id/icon_touxian_next"
+                    style="@style/common_mefragment_card_righticon" />
+
+                <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+                    android:id="@+id/sd_avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toLeftOf="@id/icon_touxian_next"
+                    android:layout_toStartOf="@id/icon_touxian_next"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_nicnname"
+            style="@style/common_card_profile"
+            android:layout_marginTop="@dimen/me_card_top_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/common_card_profile_label"
+                    android:text="@string/act_profile_label_nickname" />
+
+                <ImageView
+                    android:id="@+id/icon_nickname"
+                    style="@style/common_mefragment_card_righticon" />
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    style="@style/common_card_profile_text"
+                    android:layout_toLeftOf="@id/icon_nickname"
+                    android:layout_toStartOf="@id/icon_nickname"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginStart="80dp"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="@color/common_divider_color" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_gender"
+            style="@style/common_card_profile">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/common_card_profile_label"
+                    android:text="@string/act_profile_label_gender" />
+
+                <ImageView
+                    android:id="@+id/icon_gender"
+                    style="@style/common_mefragment_card_righticon" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    style="@style/common_card_profile_text"
+                    android:layout_toLeftOf="@id/icon_gender"
+                    android:layout_toStartOf="@id/icon_gender" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_tel"
+            style="@style/common_card_profile"
+            android:layout_marginTop="@dimen/me_card_top_margin">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/common_card_profile_label"
+                        android:text="@string/act_profile_label_tel" />
+
+                    <ImageView
+                        android:id="@+id/icon_tel"
+                        style="@style/common_mefragment_card_righticon" />
+
+                    <TextView
+                        android:id="@+id/tv_tel"
+                        style="@style/common_card_profile_text"
+                        android:layout_toLeftOf="@id/icon_tel"
+                        android:layout_toStartOf="@id/icon_tel" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_update_passwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    style="@style/PrimaryButtonStyle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/act_profile_btn_updatepaddwd"/>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="@color/common_divider_color" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_logout"
+            style="@style/common_card_profile"
+            android:layout_marginTop="@dimen/me_card_top_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="15dp"
+                    android:textSize="@dimen/main_font_size"
+                    android:textColor="@color/google_red"
+                    android:text="@string/logout" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

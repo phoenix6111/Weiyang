@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:background="@color/colorPrimary"
+        app:stl_dividerColor="@color/colorPrimary"
+        app:stl_defaultTabTextHorizontalPadding="10dp"
+        app:stl_customTabTextLayoutId="@layout/common_custom_tab"
+        app:stl_customTabTextViewId="@id/custom_text"
+        app:stl_titleOffset="auto_center"
+        app:stl_indicatorColor="@color/colorInverse"
+        app:stl_indicatorCornerRadius="1.5dp"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorThickness="2dp"
+        app:stl_indicatorWidth="auto"
+        app:stl_indicatorWithoutPadding="true"
+        android:visibility="visible" />
+    <!--<ViewStub
+        android:id="@+id/viewstub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/viewstub_index_tab_navigation"
+        android:background="@color/colorPrimary"/>-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/index_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

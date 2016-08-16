@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_content_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:background="@color/colorPrimary">
+        <TextView
+            style="@style/toolbar_title_style"
+            android:text="@string/tab_my" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/me_cv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        android:clickable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="@dimen/main_padding"
+            android:paddingTop="@dimen/second_padding"
+            android:paddingBottom="@dimen/second_padding"
+            android:paddingRight="@dimen/main_padding">
+            <com.wanghaisheng.template_lib.component.fresco.MySimpleDraweeView
+                android:id="@+id/me_iv_profile"
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
+            <TextView
+                android:id="@+id/me_tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mefragment_profile_notlogin"
+                android:layout_marginLeft="@dimen/second_padding"
+                android:layout_marginStart="@dimen/second_padding"
+                android:layout_toRightOf="@id/me_iv_profile"
+                android:layout_toEndOf="@id/me_iv_profile"
+                android:singleLine="true"
+                android:ellipsize="end"
+                style="@style/common_me_card_title"
+                android:paddingLeft="@dimen/second_padding"
+                android:layout_centerVertical="true"/>
+            <Button
+                android:id="@+id/me_btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                style="@style/PrimaryButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/mefragment_profile_btn_logintext"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/setup_card"
+        style="@style/mefragment_card_style"
+        android:layout_marginTop="@dimen/me_card_top_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/icon_setup"
+                style="@style/common_me_morefragment_card_icon"
+                android:src="@drawable/icon_setup"
+                android:layout_centerVertical="true"/>
+            <TextView
+                style="@style/common_me_card_title"
+                android:layout_toRightOf="@id/icon_setup"
+                android:layout_toEndOf="@id/icon_setup"
+                android:layout_centerVertical="true"
+                android:text="@string/setup" />
+            <ImageView
+                style="@style/common_mefragment_card_righticon" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <include layout="@layout/common_card_divider"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/feedback"
+        style="@style/mefragment_card_style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/icon_feedback"
+                style="@style/common_me_morefragment_card_icon"
+                android:src="@drawable/icon_feedback"
+                android:layout_centerVertical="true"/>
+            <TextView
+                style="@style/common_me_card_title"
+                android:layout_toRightOf="@id/icon_feedback"
+                android:layout_toEndOf="@id/icon_feedback"
+                android:layout_centerVertical="true"
+                android:text="@string/feedback" />
+            <ImageView
+                style="@style/common_mefragment_card_righticon" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <include layout="@layout/common_card_divider"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/about_card"
+        style="@style/mefragment_card_style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/icon_about"
+                style="@style/common_me_morefragment_card_icon"
+                android:src="@drawable/icon_about"
+                android:layout_centerVertical="true"/>
+            <TextView
+                style="@style/common_me_card_title"
+                android:layout_toRightOf="@id/icon_about"
+                android:layout_toEndOf="@id/icon_about"
+                android:layout_centerVertical="true"
+                android:text="@string/about" />
+            <ImageView
+                style="@style/common_mefragment_card_righticon" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_collection"
+        style="@style/mefragment_card_style"
+        android:layout_marginTop="@dimen/me_card_top_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/icon_collection"
+                style="@style/common_me_morefragment_card_icon"
+                android:src="@drawable/icon_collection"
+                android:layout_centerVertical="true"/>
+            <TextView
+                style="@style/common_me_card_title"
+                android:layout_toRightOf="@id/icon_collection"
+                android:layout_toEndOf="@id/icon_collection"
+                android:layout_centerVertical="true"
+                android:text="@string/collection" />
+            <ImageView
+                style="@style/common_mefragment_card_righticon" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_poi"
+        style="@style/mefragment_card_style"
+        android:layout_marginTop="@dimen/me_card_top_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+            <ImageView
+                android:id="@+id/icon_poi"
+                style="@style/common_me_morefragment_card_icon"
+                android:src="@drawable/icon_collection"
+                android:layout_centerVertical="true"/>
+            <TextView
+                style="@style/common_me_card_title"
+                android:layout_toRightOf="@id/icon_poi"
+                android:layout_toEndOf="@id/icon_poi"
+                android:layout_centerVertical="true"
+                android:text="@string/collection" />
+            <ImageView
+                style="@style/common_mefragment_card_righticon" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

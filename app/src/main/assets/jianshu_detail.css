@@ -1,0 +1,1108 @@
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px 55px;
+}
+
+.container a {
+    color: #28a1c5 !important
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    margin: .7em 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+}
+
+.content h1 {
+    font-size: 24px
+}
+
+.content h2 {
+    font-size: 22px
+}
+
+.content h3 {
+    font-size: 20px
+}
+
+.content h4 {
+    font-size: 18px
+}
+
+.content h5,
+.content h6 {
+    font-size: 17px
+}
+
+.content img {
+    max-width: 100%
+}
+
+.content hr {
+    border: none;
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 25px;
+}
+
+/* 引用的样式 */
+.content blockquote {
+    margin: 0 0 25px 0;
+    padding: 20px;
+    font-weight: 100;
+    word-break: break-all;
+    /*border-left: 4px solid #999;*/
+    border-left: 4px solid #6cb7fd;
+    background-color: #f6f6f6;
+}
+
+.content blockquote p:last-child {
+    margin-bottom: 0
+}
+
+/* 列表的样式 */
+ul, ol {
+    padding: 0;
+    margin: 0 0 25px 25px;
+}
+
+ol li,
+ul li {
+    line-height: 1.7em
+}
+
+ol li ol,
+ul li ul {
+    margin-top: 15px
+}
+
+/*代码块和inline代码的样式*/
+.content pre {
+    padding: 10px 10px 8px;
+    margin-bottom: 25px;
+    overflow: auto;
+    word-wrap: normal;
+    word-break: break-all;
+    white-space: pre;
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.content pre code {
+    padding: 0;
+    background-color: transparent;
+    white-space: pre;
+}
+
+.content code {
+    padding: 2px 4px;
+    background-color: #fbeded;
+    border: none;
+    white-space: pre-wrap;
+    color: #dd6751;
+    font-size: 12px;
+}
+
+/* 表单的样式 */
+.content table {
+    margin-bottom: 25px;
+    border: 1px solid #d9d9d9;
+    border-collapse: collapse;
+    border-left: none;
+}
+
+.content table thead th {
+    vertical-align: bottom
+}
+
+.content table th {
+    font-weight: bold
+}
+
+.content table th,
+.content table td {
+    padding: 8px;
+    border-left: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    line-height: 1.5em;
+    vertical-align: top;
+}
+
+/*文章图片视频和注释样式*/
+.image-package,
+.video-package {
+    margin: 0 auto 25px;
+    line-height: 1;
+    text-align: center;
+}
+
+.video-package {
+    position: relative;
+}
+
+.image-package .image-caption,
+.video-package .video-description {
+    /*display: inline-block;*/
+    display: none;
+    min-width: 20%;
+    min-height: 20px;
+    border-bottom: 1px solid #d9d9d9;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+    line-height: 150%;
+}
+
+.video-package .video-description {
+    display: none;
+}
+
+.video-package div.video-player {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.video-package div.video-placeholder {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.image-package .image-caption:empty,
+.video-package .video-description:empty {
+    display: none;
+}
+
+.video-package .video-placeholder-area {
+    position: relative;
+    display: inline-block;
+    min-height: 110px;
+    padding: 10px;
+    padding-left: 110px;
+    box-sizing: border-box;
+    border: 1px solid #d5d5d5;
+    text-align: left;
+    cursor: pointer;
+}
+
+.video-package .video-placeholder-area:after {
+    content: ' ';
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url(http://cdn-qn0.jianshu.io/assets/play-btn-505b83790aefbf01d434dc6cf86160a9.png);
+    background-position: 20px;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    transition: all linear 100ms;
+}
+
+.video-package .video-placeholder-area .video-cover {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    display: block;
+    width: 90px;
+    height: 90px;
+    opacity: 0.8;
+    transition: opacity linear 100ms;
+}
+
+.video-package .video-close-button,
+.video-package .video-provider-button {
+    float: left;
+    font-size: 14px;
+    padding: 0px;
+    margin-top: 10px;
+    line-height: 14px;
+    cursor: pointer;
+    transition: opacity linear 100ms;
+}
+
+.video-package .video-provider-button {
+    float: right;
+}
+
+.video-package i.fa {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-size: 14px;
+}
+
+.video-package i.fa.fa-eject {
+    background-image: url(http://cdn-qn0.jianshu.io/assets/eject-d-4c9aac52c94a9210b91e5072964f7e6c.png);
+}
+
+.reader-night-mode .video-package i.fa.fa-eject {
+    background-image: url(http://cdn-qn0.jianshu.io/assets/eject-n-4ce38093b99bed5984b36f917e6d7f99.png);
+}
+
+.video-package i.fa.fa-external-link {
+    background-image: url(http://cdn-qn0.jianshu.io/assets/extlink-d-5ce0821e25b443c89ee14d60b928a9ac.png);
+}
+
+.reader-night-mode .video-package i.fa.fa-external-link {
+    background-image: url(http://cdn-qn0.jianshu.io/assets/extlink-n-97b7c16904ccedf9c664bd708571dd26.png);
+}
+
+/*top*/
+.top {
+    height: 46px;
+    line-height: 46px;
+    font-size: 12px;
+    color: #e38b7b;
+    background: url(http://cdn-qn0.jianshu.io/assets/wechat_img/dividingline@2x-d56c9a2c4e55cc37ad7da3370dced64d.png) repeat-x bottom;
+    background-size: 13px;
+}
+
+.top img {
+    width: 117px
+}
+
+.top .app-android {
+    position: relative;
+    top: 8px;
+    float: right;
+    width: 80px;
+}
+
+/* 文章标题*/
+.title {
+    margin-bottom: 20px;
+    word-break: break-word;
+    font-weight: 400;
+    font-size: 24px;
+    /*color: #2f2f2f;*/
+    color: #000000;
+}
+
+/* 文章信息*/
+.article-info {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #3e3e3e;
+}
+
+.article-info .label {
+    display: inline-block;
+    padding: 2px 4px;
+    border: 1px solid #e78170;
+    border-radius: 3px;
+    background: none;
+    color: #e78170;
+    font-size: 11px;
+    font-weight: normal;
+    text-shadow: none;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.article-info a {
+    margin-right: 10px
+}
+
+/* 内容部分*/
+.content {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.8em;
+    font-weight: 400;
+    color: #3e3e3e;
+    word-wrap: break-all;
+}
+
+a {
+    text-decoration: none
+}
+
+.content img {
+    max-width: 100%
+}
+
+.content p {
+    margin: 0 0 20px 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.content .author-copyright p {
+    font-size: 12px;
+    color: #999999;
+}
+
+.top-title {
+    padding-left: 15px;
+    margin: 0 -15px 30px;
+    background-color: #f3f3f3;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: normal;
+    color: #e78170;
+    text-align: left;
+}
+
+/* 分享 */
+.share {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #e78170;
+}
+
+.share a {
+    margin: 0 10px;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #eee;
+    text-align: center;
+    line-height: 51px;
+}
+
+.share img {
+    height: 19px
+}
+
+/* 评论 */
+.comment {
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.comment:nth-child(2) {
+    padding-top: 0
+}
+
+.comment-top {
+    margin-bottom: 10px
+}
+
+.comments .user-name {
+    font-size: 14px;
+    color: rgba(40, 161, 197, 1) !important;
+}
+
+.comments .like {
+    float: right;
+    padding: 2px 0 0 20px;
+    background: url(http://cdn-qn0.jianshu.io/assets/wechat_img/icon_like-a0e5ba0bd75130681a34571ebc88a25c.png) 1px 3px no-repeat;
+    background-size: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.comments p {
+    margin: 0;
+    color: #555;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.child-comments {
+    margin: 20px 0 10px;
+    border-top: 1px dashed #d9d9d9;
+    border-left: 2px solid #d9d9d9;
+}
+
+.child-comment {
+    padding: 16px 0 16px 10px;
+    border-bottom: 1px dashed #d9d9d9;
+    font-size: 14px;
+}
+
+.download {
+    margin-top: 25px;
+    color: #49be38;
+    text-align: center;
+}
+
+.download .btn {
+    padding: 10px 0;
+    margin-top: 20px;
+    display: block;
+    color: #fff !important;
+}
+
+.btn img {
+    position: relative;
+    top: 2px;
+    height: 17px;
+    margin-right: 10px;
+}
+
+/*打赏*/
+.support-author {
+    margin: 45px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+
+.support-author .btn-pay {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-bottom: 17px;
+    background: #f69a48;
+    border-radius: 4px;
+    color: #fff !important;
+    font-size: 14px;
+}
+
+.avatar-list .avatar {
+    margin: 0 2px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    line-height: 0;
+}
+
+.avatar-list .avatar img {
+    width: 36px;
+    height: 36px;
+}
+
+.pay-modal {
+    z-index: 99999;
+    position: relative;
+    text-align: center;
+}
+
+.pay-modal .modal-top {
+    height: 80px;
+    background-color: #f69a48;
+    border-radius: 0% 0% 50% 50%/0% 0% 90% 90%;
+}
+
+.pay-modal .author {
+    position: relative;
+    top: -30px;
+    padding: 0 15px;
+    color: #888;
+}
+
+.pay-modal h3 {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    color: #2f2f2f;
+}
+
+.pay-modal .author p {
+    font-size: 14px;
+}
+
+.pay {
+    padding: 0px 15px;
+    margin-top: 20px;
+}
+
+.pay .btn {
+    padding: 10px 0;
+    border: 1px solid #f69a48;
+    border-radius: 2px;
+    color: #f57e42;
+    font-size: 16px;
+}
+
+.btn-large {
+    display: block
+}
+
+.pay h5 {
+    margin: 15px 0 8px 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #b1b1b1;
+    text-align: left;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-group .btn {
+    width: 31%;
+    vertical-align: bottom;
+}
+
+.btn-group span {
+    font-size: 12px
+}
+
+.custom-modal {
+    padding: 0 15px;
+    margin-bottom: 200px;
+}
+
+.custom-modal h3 {
+    margin: 25px 0 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.custom-modal label {
+    padding: 0 10px;
+    margin-bottom: 18px;
+    display: block;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    color: #f69a48;
+    overflow: hidden;
+}
+
+.custom-modal input,
+.custom-modal input:focus {
+    height: 44px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #b1b1b1
+}
+
+.custom-modal .btn-large {
+    padding: 11px 0;
+    background-color: #f69a48;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+}
+
+/*作者信息*/
+.author-info {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.author-info span {
+    position: relative;
+    top: -10px;
+    padding: 0 10px;
+    display: inline-block;
+    background: #fff;
+    color: #b1b1b1;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.author-info .avatar {
+    margin-top: 14px
+}
+
+.avatar img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+    border: none;
+}
+
+.author-info p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.author-info .name {
+    margin-top: 15px;
+    color: #2f2f2f;
+    font-size: 18px;
+}
+
+.author-info ul {
+    padding: 0;
+    margin-top: 15px;
+    list-style: none
+}
+
+.sns li {
+    display: inline-block
+}
+
+.sns img {
+    height: 20px;
+    padding: 0 3px;
+}
+
+/*热门文章*/
+.hot-article {
+    text-align: center
+}
+
+.hot-article span {
+    display: inline-block;
+    margin: 7px auto 17px;
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+.hot-article a {
+    display: block;
+    margin-bottom: 17px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.hot-article .btn {
+    display: inline-block;
+    padding: 6px 22px;
+    margin: 30px auto 25px;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    font-size: 14px;
+}
+
+.hot-article.author-info span {
+    margin: 0 0 10px
+}
+
+.open-app {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.open-app a {
+    background: none;
+    color: #4094c7;
+}
+
+.open-app b {
+    margin: 0 15px;
+    color: #d9d9d9;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    opacity: .5;
+    z-index: 2;
+    display: none;
+}
+
+.help-modal {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background: #f4f4f4;
+    text-align: center;
+    z-index: 3;
+}
+
+.help-modal span {
+    color: #e58c7c;
+    font-size: 18px;
+}
+
+.weixin-browser-help {
+    top: 10px
+}
+
+.qq-browser-help,
+.download-modal {
+    top: 50%;
+    margin-top: -60px;
+}
+
+.arrow {
+    position: absolute;
+    right: 12px;
+    top: -11px;
+    width: 92px;
+    height: 99px;
+    background: url(http://cdn-qn0.jianshu.io/assets/wechat_img/arrow-8f7051b4087a93154f97b5a3ef99129c.png) no-repeat right 0;
+    background-size: 44px;
+}
+
+.help-title {
+    height: 45px;
+    padding-right: 47px;
+    text-align: right;
+}
+
+.help-title span {
+    position: relative;
+    top: 13px;
+    right: 10px;
+    font-size: 18px;
+}
+
+.modal-footer-banner {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    padding: 10px 24px 10px 10px;
+    border-radius: 0;
+    border-top: 1px solid #eee;
+    background: rgba(255, 255, 255, .95);
+    text-align: left;
+}
+
+.modal-footer-banner .avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.modal-footer-banner .close {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    text-align: center;
+}
+
+.close img {
+    width: 9px
+}
+
+.modal-footer-banner .avatar,
+.modal-footer-banner div {
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modal-footer-banner span {
+    position: relative;
+    top: -2px;
+    font-size: 15px;
+    vertical-align: middle;
+    color: #2f2f2f;
+}
+
+.modal-footer-banner span a {
+    padding: 0;
+    font-size: 15px;
+    color: #2f2f2f;
+    font-weight: bold;
+}
+
+.modal-footer-banner p {
+    margin: 0;
+    font-size: 11px;
+    color: #e56954;
+}
+
+.modal-footer-banner p b {
+    font-weight: normal
+}
+
+.help-modal a {
+    display: inline-block
+}
+
+.help-modal a span {
+    display: inline-block;
+    background: url(http://cdn-qn0.jianshu.io/wechat_img/bg.png) no-repeat left bottom;
+    background-size: 93px;
+    text-align: left;
+}
+
+.weixin-browser-help p,
+.qq-browser-help p,
+.download-modal p {
+    margin: 10px auto 10px;
+    font-size: 16px;
+    color: #6B6F73;
+}
+
+.weixin-browser-help a,
+.qq-browser-help a,
+.download-modal a {
+    width: 40%;
+    height: auto;
+    margin: 10px 2px;
+    line-height: 35px;
+    background: #f4f4f4;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+}
+
+.help-modal .btn-mainRed {
+    background: #e78170;
+    border: 1px solid #e78170;
+    color: #fff;
+}
+
+.help-modal .btn-success {
+    position: relative;
+    top: 6px;
+    float: right;
+    width: 90px;
+    height: 29px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.btn-success {
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 1) !important;
+    color: #fff;
+    background: #49BE38;
+}
+
+.reader-day-mode {
+    background-color: #ffffff;
+}
+
+/*黑夜模式样式-------------------------------------*/
+.reader-night-mode {
+    background-color: #333
+}
+
+.reader-night-mode .title,
+.reader-night-mode .content {
+    color: #bbb
+}
+
+.reader-night-mode .container a {
+    color: #3dbcf5 !important
+}
+
+/* 文章信息*/
+.reader-night-mode .article-info {
+    color: #999
+}
+
+.reader-night-mode hr {
+    border-color: #262626 !important
+}
+
+.reader-night-mode .btn {
+    background-color: #3f3f3f
+}
+
+.reader-night-mode .download .btn-success {
+    color: #fff !important
+}
+
+.reader-night-mode .container .content img {
+    border-color: #262626;
+    opacity: .9;
+}
+
+.reader-night-mode .image-package .image-caption,
+.reader-night-mode .video-package .video-description,
+.reader-night-mode .video-package .video-placeholder-area {
+    border-color: #262626
+}
+
+/*文章内*/
+.reader-night-mode .content blockquote,
+.reader-night-mode .content table,
+.reader-night-mode .content table th,
+.reader-night-mode .content table td {
+    background-color: #555;
+    border-color: #262626
+}
+
+.reader-night-mode .content pre,
+.reader-night-mode .content code {
+    background-color: #262626;
+    color: #78cc78;
+}
+
+.reader-night-mode .support-author .btn-pay {
+    color: #fff !important
+}
+
+.reader-night-mode .pay-modal h3,
+.reader-night-mode .custom-modal h3 {
+    color: #eee
+}
+
+.reader-night-mode .custom-modal label {
+    background-color: #3F3F3F;
+    border: 1px solid #2F2F2f;
+}
+
+.reader-night-mode .custom-modal input {
+    color: #eee
+}
+
+.reader-night-mode .share a {
+    background-color: #222
+}
+
+.reader-night-mode .top-title {
+    background-color: #222;
+    color: #eee;
+}
+
+.reader-night-mode .comment,
+.reader-night-mode .child-comments,
+.reader-night-mode .child-comment {
+    border-color: #262626
+}
+
+.reader-night-mode .comments p {
+    color: #999
+}
+
+.reader-night-mode .author-info {
+    border-color: #999
+}
+
+.reader-night-mode .author-info span {
+    background-color: #333
+}
+
+.reader-night-mode .author-info .avatar img {
+    border: 2px solid #ddd
+}
+
+.reader-night-mode .author-info .name,
+.reader-night-mode .author-info p {
+    color: #bbb
+}
+
+.reader-night-mode .footer {
+    border-color: #2f2f2f
+}
+
+.reader-night-mode .footer span,
+.reader-night-mode .footer p {
+    color: #999
+}
+
+.reader-night-mode .footer b {
+    color: #f49484
+}
+
+.reader-night-mode .open-app b {
+    color: #222
+}
+
+/* Responsive css
+For phone and tablet devices
+-------------------------------------------------------------*/
+@media (max-width: 480px) {
+    .help-modal a {
+        font-size: 13px
+    }
+
+    /* 内容部分*/
+    .content {
+        position: relative;
+        font-size: 16px;
+    }
+
+    /*作者信息*/
+    .author-info span {
+        font-size: 12px
+    }
+
+    .author-info p {
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+
+    /*热门文章*/
+    .hot-article span {
+        font-size: 12px
+    }
+
+    .hot-article a {
+        font-size: 16px
+    }
+
+    .hot-article .btn {
+        font-size: 12px
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .content img {
+        width: auto
+    }
+}
+
+/*iphone6 plus*/
+@media (max-width: 414px) {
+    .modal-footer-banner .btn-success {
+        width: 90px
+    }
+}
+
+/*iphone6*/
+@media (max-width: 375px) {
+    .help-modal a {
+        padding: 0 3px
+    }
+
+    .modal-footer-banner p b {
+        display: none
+    }
+}
+
+/*iphone5、4、3*/
+@media (max-width: 320px) {
+    .help-title {
+        padding-right: 47px;
+    }
+
+    .help-title span {
+        font-size: 16px;
+        right: auto;
+    }
+
+    .help-modal .btn-success {
+        width: 70px
+    }
+}
