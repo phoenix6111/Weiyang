@@ -27,7 +27,7 @@ public class AMapPoiDetailPresenter extends BaseLoadablePresenter<AMapPoiDetailV
 
     public void getMapPoiDetail(MapPoiBean mapPoiBean) {
 
-        Subscription subscription = aMapRepository.getMapPoiDetailBean(mapPoiBean)
+        Subscription subscription = aMapRepository.subscribeMapPoiBeanDetail(mapPoiBean)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new AppSubscriber<MapPoiDetailBean>() {
                     @Override

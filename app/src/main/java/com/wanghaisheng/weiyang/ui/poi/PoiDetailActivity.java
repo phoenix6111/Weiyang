@@ -6,8 +6,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.maps2d.AMapUtils;
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.route.Path;
 import com.apkfuns.logutils.LogUtils;
 import com.iarcuschin.simpleratingbar.SimpleRatingBar;
 import com.wanghaisheng.template_lib.appexception.AppException;
@@ -20,8 +25,12 @@ import com.wanghaisheng.weiyang.datasource.beans.MapPoiBean;
 import com.wanghaisheng.weiyang.datasource.beans.MapPoiDetailBean;
 import com.wanghaisheng.weiyang.injector.component.DaggerActivityComponent;
 import com.wanghaisheng.weiyang.injector.module.ActivityModule;
+import com.wanghaisheng.weiyang.navigator.Navigator;
 import com.wanghaisheng.weiyang.presenter.amap.AMapPoiDetailPresenter;
 import com.wanghaisheng.weiyang.presenter.amap.AMapPoiDetailView;
+import com.wanghaisheng.weiyang.utils.AMapLocationUtil;
+import com.wanghaisheng.weiyang.utils.amap.AMapNavUtil;
+import com.wanghaisheng.weiyang.utils.amap.AMapUtil;
 
 import javax.inject.Inject;
 
@@ -32,9 +41,18 @@ import butterknife.OnClick;
  * Author: sheng on 2016/8/16 11:49
  * Email: 1392100700@qq.com
  */
-public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView{
+public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView,AMapLocationUtil.MyLocationListener {
 
     public static final String POI_ID = "poi_id";
+
+    private AMapLocationUtil aMapLocationUtil;
+
+    //当前位置的坐标
+    private LatLonPoint mMyLatLng;
+    //餐厅位置的坐标
+    private LatLonPoint mThisLatLng;
+    //当前所在的城市
+    private String mCurrentCity;
 
     @Bind(R.id.mdv_cover)
     MySimpleDraweeView mdvCover;
@@ -84,11 +102,16 @@ public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView
     TextView tvNavDistance;
     @Bind(R.id.cv_nav)
     CardView cvNav;
+    @Bind(R.id.iv_people_tips)
+    ImageView ivPeopleTip;
 
     private MapPoiBean mapPoiBean;
+    private MapPoiDetailBean mapPoiDetailBean;
 
     @Inject
     AMapPoiDetailPresenter presenter;
+    //已经执行过路线规划
+    private boolean navSetuped;
 
     @Override
     public void getDatas(Bundle savedInstanceState) {
@@ -108,11 +131,14 @@ public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView
     protected void initView() {
         super.initView();
         initToolbar(toolbar);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         if(presenter != null) {
             presenter.attachView(this);
             presenter.getMapPoiDetail(mapPoiBean);
         }
+
+        aMapLocationUtil = new AMapLocationUtil(getApplicationContext(),this);
+        aMapLocationUtil.startLocation();
     }
 
     @Override
@@ -121,18 +147,25 @@ public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView
     }
 
 
-    @OnClick(R.id.cv_intro)
-    public void onClick() {
+    @OnClick({R.id.cv_intro,R.id.cv_nav})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.cv_nav:
+                Navigator.openAMapRouteActivity(PoiDetailActivity.this,mMyLatLng,mThisLatLng,mCurrentCity);
+                break;
 
+        }
 
     }
 
     @Override
     public void renderAMapPoiDetail(MapPoiDetailBean detailBean) {
+        this.mapPoiDetailBean = detailBean;
+
         if(!TextUtils.isEmpty(detailBean.getCoverImg())) {
             mdvCover.setDraweeViewUrl(detailBean.getCoverImg());
         }
-        getSupportActionBar().setTitle(detailBean.getName());
+//        getSupportActionBar().setTitle(detailBean.getName());
         tvTitle.setText(detailBean.getName());
         srbScore.setRating(detailBean.getScore());
         LogUtils.d("  price  "+detailBean.getPrice());
@@ -182,6 +215,8 @@ public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView
         }
 
         tvNavDistance.setText(detailBean.getDistance());
+        mThisLatLng = new LatLonPoint(detailBean.getLatitude(),detailBean.getLongitude());
+        setupDistanceAndNav();
 
         /*
         @Bind(R.id.tv_go_time)
@@ -205,4 +240,45 @@ public class PoiDetailActivity extends BaseActivity implements AMapPoiDetailView
     public void loadError(int loadType, AppException e) {
         LogUtils.d(e);
     }
+
+    @Override
+    public void myLocation(AMapLocation mapLocation) {
+        if(mapLocation != null && mapLocation.getErrorCode() == 0) {
+            this.mCurrentCity = mapLocation.getCity();
+
+            this.mMyLatLng = new LatLonPoint(mapLocation.getLatitude(),mapLocation.getLongitude());
+            setupDistanceAndNav();
+        }
+    }
+
+    //设置距离和导航
+    private void setupDistanceAndNav() {
+        if(mMyLatLng != null && mThisLatLng != null && !navSetuped) {
+            // 计算量坐标点距离
+            int distance = (int) AMapUtils.calculateLineDistance(AMapUtil.convertToLatLng(mMyLatLng), AMapUtil.convertToLatLng(mThisLatLng));
+            AMapNavUtil navUtil = new AMapNavUtil(getApplicationContext());
+
+            int routeType = AMapNavUtil.ROUTE_TYPE_WALK;
+            if(distance > 1000) {
+                routeType = AMapNavUtil.ROUTE_TYPE_DRIVE;
+            }
+            navUtil.getDistanceAndDuration(mMyLatLng, mThisLatLng, mapPoiBean.getCityname(), routeType, new AMapNavUtil.NavPlanResultListener() {
+                @Override
+                public void navPlanResult(Path routePath, int routeType) {
+                    String time = AMapUtil.getFriendlyTime((int) routePath.getDuration());
+                    tvGoTime.setText(time);
+                    String dis = AMapUtil.getFriendlyLength((int) routePath.getDistance());
+                    tvNavDistance.setText(dis);
+                    tvDistance.setText(dis);
+
+                    if(routeType == AMapNavUtil.ROUTE_TYPE_DRIVE) {
+                        ivPeopleTip.setImageResource(R.drawable.drive_tips);
+                    }
+                }
+            });
+            navSetuped = true;
+        }
+    }
+
+
 }

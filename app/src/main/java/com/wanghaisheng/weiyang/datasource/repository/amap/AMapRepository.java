@@ -2,7 +2,6 @@ package com.wanghaisheng.weiyang.datasource.repository.amap;
 
 import com.wanghaisheng.weiyang.datasource.beans.MapPoiBean;
 import com.wanghaisheng.weiyang.datasource.beans.MapPoiDetailBean;
-import com.wanghaisheng.weiyang.datasource.beans.MapPoiDetailBeanResult;
 
 import java.util.List;
 
@@ -23,13 +22,21 @@ public interface AMapRepository {
      */
     Observable<List<MapPoiBean>> networkMapPoiBeanList(double latitude,double longitude,int pageNum);
 
-    Observable<List<MapPoiBean>> subscribeMapPoiBeanList(double latitude,double longitude,int pageNum);
+    Observable<List<MapPoiBean>> subscribeMapPoiBeanList(double latitude, double longitude, int pageNum);
 
     /**
-     * 根据PoiId 获取MapPoiDetailBean
-     * @param poiId
+     * mapPoiBean 获取MapPoiDetailBean
+     * @param mapPoiBean
      * @return
      */
-    Observable<MapPoiDetailBean> getMapPoiDetailBean(MapPoiBean mapPoiBean);
+    Observable<MapPoiDetailBean> netWorkMapPoiBeanDetail(MapPoiBean mapPoiBean);
+
+    /**
+     * 从缓存到网络顺序获取
+     * @param mapPoiBean
+     * @return
+     */
+    Observable<MapPoiDetailBean> subscribeMapPoiBeanDetail(final MapPoiBean mapPoiBean);
+
 
 }

@@ -10,6 +10,7 @@
     <color name="transparent">#00000000</color>
     <color name="primary_black">#000000</color>
     <color name="primary_font_color">#ff333333</color>
+    <color name="second_title_color">#B6B6B6</color>
     <color name="second_font_color">#ff666666</color>
     <color name="mainTabTextColor">#dddddd</color>
 

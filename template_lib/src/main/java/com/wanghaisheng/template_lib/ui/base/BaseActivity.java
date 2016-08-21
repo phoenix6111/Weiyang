@@ -119,7 +119,7 @@ public abstract class BaseActivity extends AppCompatActivity implements DialogCo
     protected void initToolbar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.tabbar_back_filter);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.bg_mine_title_bar_back);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

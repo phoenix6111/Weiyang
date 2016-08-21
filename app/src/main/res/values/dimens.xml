@@ -3,8 +3,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="normal_font_size">15sp</dimen>
     <dimen name="common_search_text_size">14sp</dimen>
     <dimen name="common_item_em_size">10sp</dimen>
+    <dimen name="common_content_size">15sp</dimen>
+
+    <!-- Font Size-->
+    <dimen name="font_size_least">12sp</dimen>
+    <dimen name="font_size_small">14sp</dimen>
+    <dimen name="font_size_middle">16sp</dimen>
+    <dimen name="font_size_big">18sp</dimen>
+    <dimen name="font_size_huge">20sp</dimen>
+    <dimen name="font_size_biggest">24sp</dimen>
 
     <dimen name="common_item_img_height">75dp</dimen>
     <dimen name="common_toolbar_text_size">18sp</dimen>
@@ -13,4 +23,6 @@
     <dimen name="me_card_right_nexticon_padding">15dp</dimen>
     <dimen name="me_card_height">50dp</dimen>
     <dimen name="me_card_top_margin">20dp</dimen>
+
+
 </resources>

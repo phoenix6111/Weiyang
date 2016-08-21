@@ -13,14 +13,43 @@
     <style name="common_item_em_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/common_item_em_size</item>
-        <item name="android:textColor">@color/second_font_color</item>
+        <item name="android:textSize">@dimen/font_size_least</item>
+        <item name="android:textColor">@color/md_grey_500</item>
+    </style>
+
+    <style name="common_content_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_middle</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="common_grey_content_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_middle</item>
+        <item name="android:textColor">@color/md_grey_500</item>
+    </style>
+
+    <style name="common_item_second_content_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/md_grey_700</item>
     </style>
 
     <style name="common_item_img_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/common_dreeview_bg</item>
+    </style>
+
+    <style name="common_bold_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_big</item>
+        <item name="android:textColor">@color/primary_black</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="toolbar_title_style">

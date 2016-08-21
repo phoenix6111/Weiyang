@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl_child_nav_dir_container"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:visibility="visible">
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#DCDFE0"
+            android:visibility="visible"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/direction_bus_list_turnpoint" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_child_desc_container"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_bus_route_child_dir"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            tools:src="@drawable/action2"/>
+        <TextView
+            android:id="@+id/tv_bus_route_child_desc"
+            style="@style/common_item_second_content_style"
+            android:layout_toRightOf="@id/iv_bus_route_child_dir"
+            android:layout_centerVertical="true"
+            tools:text="行驶1.5公里 红绿灯3个右转进入一号路"/>
+    </RelativeLayout>
+</RelativeLayout>

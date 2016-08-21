@@ -188,7 +188,11 @@ public class EntitiesToArticles {
         MapPoiDetailBeanResult.DataBean dataBean = mapPoiDetailBeanResult.getData();
         MapPoiDetailBeanResult.DataBean.BaseBean baseBean = dataBean.getBase();
         detailBean.setAddress(baseBean.getAddress());
-        detailBean.setTel(baseBean.getTelephone());
+        String tel = baseBean.getTelephone();
+        if(!TextUtils.isEmpty(tel)) {
+            tel = tel.replace(";","  ");
+            detailBean.setTel(tel);
+        }
         detailBean.setPoiId(baseBean.getPoiid());
         detailBean.setName(baseBean.getName());
         detailBean.setLongitude(Double.parseDouble(baseBean.getLongitude()));
@@ -198,7 +202,11 @@ public class EntitiesToArticles {
 
         MapPoiDetailBeanResult.DataBean.DiningBean diningBean = mapPoiDetailBeanResult.getData().getDining();
         detailBean.setScore(Float.parseFloat(diningBean.getSrc_star()));
-        detailBean.setTags(diningBean.getTag_special());
+        String tag = diningBean.getTag_special();
+        if(!TextUtils.isEmpty(tag)) {
+            tag = tag.replace(",","  ");
+            detailBean.setTags(tag);
+        }
         detailBean.setPrice(diningBean.getPrice()+"");
         detailBean.setIntro(diningBean.getIntro());
         detailBean.setOpentime(diningBean.getOpentime2());

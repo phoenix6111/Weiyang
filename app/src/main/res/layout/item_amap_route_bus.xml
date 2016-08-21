@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/main_padding"
+    android:clickable="true"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@color/white">
+        <RelativeLayout
+            android:id="@+id/rl_bus_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_bus_path_title"
+                style="@style/common_bold_title_style"
+                tools:text="B726路/939路 -> M296路/941路"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/common_more_details_blue_arrow"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_bus_path_desc"
+            style="@style/common_item_second_content_style"
+            android:layout_marginTop="@dimen/main_padding"
+            tools:text="31分钟 - 4.0元 - 步行306米"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

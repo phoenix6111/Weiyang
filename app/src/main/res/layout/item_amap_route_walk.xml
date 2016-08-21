@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingLeft="@dimen/main_padding"
+    android:paddingRight="@dimen/main_padding"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/iv_route_dir"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        tools:src="@drawable/action_foot_navi_start"/>
+    <TextView
+        android:id="@+id/iv_route_instruction"
+        android:layout_toRightOf="@id/iv_route_dir"
+        android:layout_toEndOf="@id/iv_route_dir"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/main_padding"
+        android:layout_marginStart="@dimen/main_padding"
+        style="@style/common_content_style"
+        tools:text="从我的位置 沿金田路，向西南出发"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/common_divider_color3"/>
+</RelativeLayout>

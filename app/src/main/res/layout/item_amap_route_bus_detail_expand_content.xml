@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+        <RelativeLayout
+            android:layout_width="20dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/tv_down"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/direction_bus_detail_mid_bg" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_down"
+                android:background="#6FA7F1"
+                android:layout_centerHorizontal="true"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_down"
+                android:background="#6FA7F1"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_bus_expand_station"
+            style="@style/common_item_second_content_style"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginStart="35dp"
+            tools:text="大工业区"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -139,7 +139,6 @@ public class MyLocationHandler implements LocationSource,
 //        mLocationOption.setInterval(2000);
         //给定位客户端对象设置定位参数
         mLocationClient.setLocationOption(mLocationOption);
-
     }
 
     /**

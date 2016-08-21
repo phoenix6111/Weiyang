@@ -84,7 +84,7 @@ public class AMapRepositoryImpl implements AMapRepository {
     }
 
     @Override
-    public Observable<MapPoiDetailBean> getMapPoiDetailBean(final MapPoiBean mapPoiBean) {
+    public Observable<MapPoiDetailBean> netWorkMapPoiBeanDetail(final MapPoiBean mapPoiBean) {
         return aMapDetailApi.getMapDetailBean(mapPoiBean.getPoiId())
                 .map(new Func1<MapPoiDetailBeanResult, MapPoiDetailBean>() {
                     @Override
@@ -108,6 +108,23 @@ public class AMapRepositoryImpl implements AMapRepository {
                     }
                 })
                 .subscribeOn(Schedulers.io());
+    }
+
+    @Override
+    public Observable<MapPoiDetailBean> subscribeMapPoiBeanDetail(final MapPoiBean mapPoiBean) {
+        String cacheKey = CacheHelper.getCacheKey(ApiFactory.AMAP_POI_DETAIL_URL,"xxx","detail",mapPoiBean.getPoiId());
+        Observable<MapPoiDetailBean> diskCache = iCache.getObservableCacheData(cacheKey);
+
+        return Observable.concat(
+                diskCache
+                ,netWorkMapPoiBeanDetail(mapPoiBean))
+                .first(new Func1<MapPoiDetailBean, Boolean>() {
+                    @Override
+                    public Boolean call(MapPoiDetailBean bean) {
+                        return bean != null;
+                    }
+                });
+
     }
 
 

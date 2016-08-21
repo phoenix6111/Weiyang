@@ -1,20 +1,15 @@
 package com.wanghaisheng.weiyang.ui.popwindow;
 
 import android.content.Context;
-import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.PopupWindow;
 
+import com.apkfuns.logutils.LogUtils;
 import com.aspsine.swipetoloadlayout.OnLoadMoreListener;
 import com.aspsine.swipetoloadlayout.OnRefreshListener;
 import com.aspsine.swipetoloadlayout.SwipeToLoadLayout;
@@ -31,15 +26,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PoiListPopupWindow extends PopupWindow {
-    //PoupupWindow的宽和高
-    private int mWidth;
-    private int mHeight;
-    private View mConvertView;
+public class PoiListPopupWindow extends BasePopupWindow {
 
     //ListView中的数据
     private List<MapPoiBean> mDatas = new ArrayList<>();
-    private Context mContext;
     protected SwipeToLoadLayout swipeToLoadLayout;
     protected RecyclerView myRecyclerView;
     protected CommonAdapter<MapPoiBean> mAdapter;
@@ -60,34 +50,10 @@ public class PoiListPopupWindow extends PopupWindow {
     }
 
     public PoiListPopupWindow(Context context, List<MapPoiBean> datas) {
-        this.mContext = context;
+        super(context);
         this.mDatas = datas;
-        //设置宽和高
-        calculateWidthAndHeight();
-        mConvertView = LayoutInflater.from(mContext).inflate(R.layout.popup_window_layout,null);
-        setContentView(mConvertView);
-        //设置宽度和高度
-        setWidth(mWidth);
-        setHeight(mHeight);
-
-        setFocusable(true);
-        setTouchable(true);
-        setOutsideTouchable(true);
-        setBackgroundDrawable(new BitmapDrawable());
-
-        setTouchInterceptor(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_OUTSIDE) {
-                    dismiss();
-                    return true;
-                }
-                return false;
-            }
-        });
-
+        LogUtils.d(mContext);
         initView();
-
     }
 
     private void initView() {
@@ -140,6 +106,7 @@ public class PoiListPopupWindow extends PopupWindow {
     }
 
     private CommonAdapter<MapPoiBean> initAdapter() {
+        LogUtils.d(mContext);
         return new CommonAdapter<MapPoiBean>(mContext,R.layout.item_popup_window,mDatas) {
             @Override
             public void convert(ViewHolder holder, final MapPoiBean poiItem, int position) {
@@ -180,13 +147,14 @@ public class PoiListPopupWindow extends PopupWindow {
         return dis+"米";
     }
 
-    //设置宽和高，宽为屏幕的宽度，高为屏幕高度的0.7倍
-    private void calculateWidthAndHeight() {
-        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
-
-        mWidth = outMetrics.widthPixels;
-        mHeight = (int) (outMetrics.heightPixels*0.4f);
+    @Override
+    protected int getLayoutId() {
+        return R.layout.popup_window_layout;
     }
+
+    @Override
+    protected float heightRatio() {
+        return 0.4f;
+    }
+
 }

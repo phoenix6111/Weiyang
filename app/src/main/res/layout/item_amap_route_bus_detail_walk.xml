@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingLeft="@dimen/main_padding"
+    android:paddingRight="@dimen/main_padding">
+    <RelativeLayout
+        android:id="@+id/rl_walk_dir"
+        android:layout_width="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/fromto_bus_detail_line_icon"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_walk_dist_dur"
+        style="@style/common_item_second_content_style"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        tools:text="步行142米 约2分钟"/>
+    <ImageView
+        android:id="@+id/iv_foot_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="5dp"
+        android:src="@drawable/fromto_bus_detail_foot_icon"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:layout_toLeftOf="@id/iv_foot_icon"
+        android:layout_toStartOf="@id/iv_foot_icon"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_centerVertical="true"
+        android:background="@color/md_grey_400"/>
+</RelativeLayout>

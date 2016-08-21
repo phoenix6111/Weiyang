@@ -3,10 +3,8 @@ package com.wanghaisheng.weiyang.ui.poi;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 
 import com.amap.api.maps2d.AMap;
 import com.amap.api.maps2d.MapView;
@@ -110,33 +108,8 @@ public class MeishiMapFragment extends BaseViewPagerLazyFragment implements
     private void initPopupWindow() {
         mPoiLitPopupWindow = new PoiListPopupWindow(getContext(),new ArrayList<MapPoiBean>());
 
-        mPoiLitPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                lightOn();
-            }
-        });
-
 //        mPoiLitPopupWindow.setItemClickListener(this);
         mPoiLitPopupWindow.setAnimationStyle(R.style.dir_popupwindow_anim);
-    }
-
-    /**
-     * 使屏幕区域变暗
-     */
-    private void lightOn() {
-        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
-        lp.alpha = 1.0f;
-        getActivity().getWindow().setAttributes(lp);
-    }
-
-    /**
-     * 使屏幕区域变暗
-     */
-    private void lightOff() {
-        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
-        lp.alpha = 0.3f;
-        getActivity().getWindow().setAttributes(lp);
     }
 
     @Override
@@ -241,7 +214,6 @@ public class MeishiMapFragment extends BaseViewPagerLazyFragment implements
             View bottomContainer = ((MainActivity) getActivity()).getBottomContainer();
             mPoiLitPopupWindow.showAsDropDown(bottomContainer, 0, -bottomContainer.getHeight());
             mPoiLitPopupWindow.setDatas(datas,0);
-            lightOff();
         }
         mPoiSearchHandler.renderPoiResultToMap(datas);
     }
@@ -275,7 +247,6 @@ public class MeishiMapFragment extends BaseViewPagerLazyFragment implements
             View bottomContainer = ((MainActivity) getActivity()).getBottomContainer();
             mPoiLitPopupWindow.showAsDropDown(bottomContainer, 0, -bottomContainer.getHeight());
             mPoiLitPopupWindow.setDatas(mMapPoiBeanList,mPoiSearchHandler.getLastMarkerPosition());
-            lightOff();
         }
 
         //return false 则会弹出infowindow

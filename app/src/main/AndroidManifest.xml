@@ -85,6 +85,26 @@
             android:screenOrientation="portrait"
             android:hardwareAccelerated="true"/>
 
+        <activity android:name=".ui.poi.AMapRouteActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
+        <activity android:name=".ui.poi.AMapDriveRouteDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
+        <activity android:name=".ui.poi.AMapWalkRouteDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
+        <activity android:name=".ui.poi.AMapBusRouteDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
+
         <service android:name="com.amap.api.location.APSService"/>
 
         <meta-data android:name="com.amap.api.v2.apikey" android:value="63bae15e379cbf3334bc8ef36fe1ff19"/>

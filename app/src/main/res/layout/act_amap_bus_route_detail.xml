@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_content_bg">
+    <include layout="@layout/common_appbar_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="@dimen/main_padding"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/tv_bus_route_line"
+            style="@style/common_bold_title_style"
+            android:textSize="@dimen/font_size_middle"
+            tools:text="939路/B726路 -> M422路外环"/>
+        <TextView
+            android:id="@+id/tv_dur_cost_dis"
+            style="@style/common_grey_content_style"
+            android:layout_marginTop="@dimen/main_padding"
+            tools:text="24分钟 · 4.0元 · 步行204米"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/main_padding"
+        android:background="@color/white"/>
+</LinearLayout>

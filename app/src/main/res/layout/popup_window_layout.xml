@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_content_bg">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/search_result_handle_bg"/>
     <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
         android:id="@+id/swipeToLoadLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/drive_footer_bg"
+        android:background="@color/primary_content_bg"
         app:swipe_style="classic">
         <include
             android:id="@id/swipe_refresh_header"

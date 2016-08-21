@@ -15,6 +15,7 @@ import com.wanghaisheng.weiyang.ui.caipu.MeishiSearchActivity;
 import com.wanghaisheng.weiyang.ui.caipu.SelectCaipuActivity;
 import com.wanghaisheng.weiyang.ui.common.ArticleBeanDetailActivity;
 import com.wanghaisheng.weiyang.ui.common.WechatArticleDetailActivity;
+import com.wanghaisheng.weiyang.ui.poi.AMapRouteActivity;
 import com.wanghaisheng.weiyang.ui.poi.PoiDetailActivity;
 
 import dagger.Component;
@@ -53,5 +54,7 @@ public interface ActivityComponent {
     void inject(UpdatePasswordActivity updatePasswordActivity);
 
     void inject(PoiDetailActivity poiDetailActivity);
+
+    void inject(AMapRouteActivity aMapRouteActivity);
 
 }

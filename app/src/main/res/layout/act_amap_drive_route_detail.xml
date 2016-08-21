@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/primary_content_bg">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.design.widget.AppBarLayout
+            android:layout_height="@dimen/actionbar_height"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            app:elevation="0dp"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionbar_height"
+                android:fitsSystemWindows="true"
+                android:background="?attr/colorPrimary"
+                app:elevation="0dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextAppearance="@style/ToolbarTitle">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    tools:text="从我的位置 - 金茂园"
+                    android:textColor="@color/gray_light"
+                    android:textSize="16sp" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/main_padding"
+            android:paddingTop="@dimen/main_padding"
+            android:paddingBottom="@dimen/main_padding"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/tv_dur_dist"
+                style="@style/common_bold_title_style"
+                tools:text="8分钟 4.5公里"/>
+            <TextView
+                android:id="@+id/tv_route_roads"
+                style="@style/common_item_em_style"
+                tools:text="金田路->荔景南路->金牛路"/>
+            <TextView
+                android:id="@+id/tv_tri_taxicost"
+                style="@style/common_item_em_style"
+                android:layout_marginTop="2dp"
+                tools:text="红绿灯8个 打车约16元"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/common_divider_color3"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="45dp"
+            android:background="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/route_blue_text_bg"
+            android:textColor="@color/md_grey_50"
+            android:gravity="center"
+            android:textSize="@dimen/font_size_middle"
+            android:text="@string/simulation_route"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:background="@drawable/route_blue_text_bg"
+            android:textColor="@color/md_grey_50"
+            android:gravity="center"
+            android:textSize="@dimen/font_size_middle"
+            android:text="@string/start_route"/>
+    </LinearLayout>
+</RelativeLayout>
